@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Card Details</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="grid-wrapper">
+        <div class="card-bank">
+          <div class="card-image-back">
+            <img src="./assets/bg-card-back.png" alt="Card bank back" />
+            <p class="card-bank-cvc">000</p>
+          </div>
+          <div class="card-image-front">
+            <img src="./assets/bg-card-front.png" alt="Card bank front" />
+            <p class="card-bank-number">1234 5678 9123 0000</p>
+            <div class="card-back-info">
+              <p class="card-bank-name">Jane Appleseed</p>
+              <div class="card-bank-dates">
+                <p class="card-bank-month">00/</p>
+                <p class="card-bank-year">00</p>
+              </div>
+            </div>
+            <img src="./assets/card-logo.svg" class="card-logo" alt="Card Logo">
+          </div>
+        </div>
+        <div class="form-card">
+          <form>
+            <div class="form-control">
+              <label for="card-name">Cardholder Name</label>
+              <input type="text" name="card-name" id="card-name" placeholder="e.g Jane Appleseed" />
+            </div>
+            <div class="form-control">
+              <label for="card-number">Card Number</label>
+              <input type="number" name="card-number" id="card-number" placeholder="e.g 1234 5678 9123 0000" />
+            </div>
+            <div class="form-control form-card-dates">
+              <div>
+                <label for="card-month">Exp. Date (MM/YY)</label>
+                <div class="card-flex">
+                  <input type="number" name="card-month" id="card-month" placeholder="MM" />
+                  <input type="number" name="card-year" id="card-year" placeholder="YY" />
+                </div>
+              </div>
+              <div>
+                <label for="card-cvc">Cvc</label>
+                <input type="number" name="card-cvc" id="card-cvc" placeholder="CVC" />
+              </div>
+            </div>
+            <button type="submit" class="form-btn">Confirm</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

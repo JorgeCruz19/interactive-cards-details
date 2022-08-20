@@ -1,0 +1,286 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-linear-gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --dark-violet: hsl(278, 68%, 11%);
+  --color-red: hsl(0, 100%, 66%);
+  --color-white: #fff;
+  --font-main: "Space Grotesk", sans-serif;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: 500;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+input::placeholder {
+  font-family: var(--font-main);
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid var(--light-grayish-violet);
+  outline: 0;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--dark-grayish-violet);
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+input:focus {
+  border-image-slice: 1;
+  border-image-source: var(--color-linear-gradient);
+  border-width: 1px;
+}
+
+.container {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  /* max-width: 1400px; */
+  width: 100%;
+}
+
+.grid-wrapper {
+  display: grid;
+}
+
+.card-bank {
+  background-image: url("../assets/bg-main-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 230px;
+  padding: 1rem;
+  position: relative;
+}
+
+.card-image-back {
+  display: flex;
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+}
+
+.card-image-back img,
+.card-image-front img {
+  width: 280px;
+}
+
+.card-bank-cvc {
+  color: var(--color-white);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  position: absolute;
+  right: 8%;
+  top: 43%;
+  transform: translate(-43%, 8%);
+}
+
+.card-image-front {
+  display: flex;
+  left: 1rem;
+  position: absolute;
+  top: 6.8rem;
+  z-index: 10;
+}
+
+.card-bank-name {
+  text-transform: uppercase;
+}
+
+.card-bank-number,
+.card-back-info,
+.card-logo {
+  position: absolute;
+}
+
+.card-bank-number {
+  bottom: 25%;
+  color: var(--color-white);
+  left: 0;
+  letter-spacing: 3px;
+  padding: 0 1rem;
+  transform: translateY(-25%);
+  width: 100%;
+}
+
+.card-back-info {
+  align-items: center;
+  bottom: 12%;
+  color: var(--color-white);
+  display: flex;
+  font-size: 0.5rem;
+  font-weight: normal;
+  justify-content: space-between;
+  left: 0;
+  letter-spacing: 2px;
+  padding: 0 1rem;
+  transform: translateY(-12%);
+  width: 100%;
+}
+
+.card-bank-dates {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card-image-front .card-logo {
+  left: 1rem;
+  top: 12%;
+  transform: translateY(-12%);
+  width: 46px;
+}
+
+.form-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5rem 1rem 1rem;
+}
+
+.form-control {
+  margin-bottom: 1.5rem;
+}
+
+.form-card-dates {
+  column-gap: 0.6rem;
+  display: flex;
+}
+
+.card-flex {
+  column-gap: 0.6rem;
+  display: flex;
+}
+
+.form-btn {
+  background-color: var(--dark-violet);
+  border-radius: 8px;
+  border: 0;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  outline: 0;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+  }
+
+  .card-bank {
+    background-image: url("../assets/bg-main-desktop.png");
+    height: 100%;
+  }
+
+  .card-image-front {
+    right: -1rem;
+    left: initial;
+    top: 33%;
+  }
+  .card-image-back {
+    right: -3rem;
+    top: 50%;
+    z-index: 11;
+  }
+
+  .form-card {
+    display: grid;
+    padding: 0 3rem 0 3rem;
+    place-items: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card-image-front {
+    right: -25%;
+    left: initial;
+    top: 23%;
+  }
+
+  .card-image-back {
+    right: -35%;
+    top: 50%;
+    z-index: 11;
+  }
+
+  .card-bank-number {
+    font-size: 1.4rem;
+  }
+
+  .card-back-info {
+    font-size: 0.7rem;
+  }
+
+  .card-image-back img,
+  .card-image-front img {
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card-image-front {
+    left: initial;
+    right: -25%;
+    top: 20%;
+  }
+
+  .card-image-back {
+    right: -40%;
+    top: 50%;
+    z-index: 11;
+  }
+
+  .card-back-info,
+  .card-bank-number {
+    padding: 0 1.5rem;
+  }
+
+  .card-bank-cvc{
+    font-size: 0.8rem;
+    right: 10%;
+    top: 45%;
+    transform: translate(-45%, 10%);
+  }
+
+  .card-image-back img,
+  .card-image-front img {
+    width: 480px;
+  }
+}
