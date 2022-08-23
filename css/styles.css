@@ -12,6 +12,7 @@
   --dark-grayish-violet: hsl(279, 6%, 55%);
   --dark-violet: hsl(278, 68%, 11%);
   --color-red: hsl(0, 100%, 66%);
+  --color-success: #2ecc71;
   --color-white: #fff;
   --font-main: "Space Grotesk", sans-serif;
 }
@@ -25,6 +26,7 @@ body {
   font-weight: 500;
   line-height: 1.5;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 input::placeholder {
@@ -48,6 +50,7 @@ label {
 input {
   border-radius: 8px;
   border: 1px solid var(--light-grayish-violet);
+  font-size: 1rem;
   outline: 0;
   padding: 0.8rem;
   width: 100%;
@@ -65,11 +68,18 @@ input:focus {
   border-width: 1px;
 }
 
+.credit-card {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: var(--color-linear-gradient);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
 .container {
   display: block;
   height: 100%;
   margin: 0 auto;
-  /* max-width: 1400px; */
   width: 100%;
 }
 
@@ -123,13 +133,15 @@ input:focus {
 
 .card-bank-number,
 .card-back-info,
-.card-logo {
+.card-logo,
+.card-logo-brand {
   position: absolute;
 }
 
 .card-bank-number {
   bottom: 25%;
   color: var(--color-white);
+  font-size: 0.9rem;
   left: 0;
   letter-spacing: 3px;
   padding: 0 1rem;
@@ -165,14 +177,36 @@ input:focus {
   width: 46px;
 }
 
+.card-image-front .card-logo-brand {
+  display: none;
+  opacity: 0.8;
+  right: 1rem;
+  top: 0%;
+  transform: translateY(-0%);
+  width: 80px;
+}
+
 .form-card {
-  max-width: 500px;
   margin: 0 auto;
+  max-width: 500px;
   padding: 5rem 1rem 1rem;
+  width: 100%;
 }
 
 .form-control {
   margin-bottom: 1.5rem;
+}
+
+.form-control.success input {
+  border-color: var(--color-success);
+}
+
+.form-control.error input {
+  border-color: var(--color-red);
+}
+
+.form-control small {
+  color: var(--color-red);
 }
 
 .form-card-dates {
@@ -182,7 +216,9 @@ input:focus {
 
 .card-flex {
   column-gap: 0.6rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2fr, 1fr);
 }
 
 .form-btn {
@@ -197,6 +233,28 @@ input:focus {
   padding: 1rem;
   text-align: center;
   width: 100%;
+}
+.card-confirmation {
+  text-align: center;
+}
+
+.card-confirmation-image {
+  margin-bottom: 1rem;
+  width: 80px;
+}
+
+.card-confirmation-title {
+  color: var(--dark-violet);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.card-confirmation-details {
+  color: var(--dark-grayish-violet);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -272,7 +330,7 @@ input:focus {
     padding: 0 1.5rem;
   }
 
-  .card-bank-cvc{
+  .card-bank-cvc {
     font-size: 0.8rem;
     right: 10%;
     top: 45%;

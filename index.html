@@ -25,34 +25,41 @@
             <div class="card-back-info">
               <p class="card-bank-name">Jane Appleseed</p>
               <div class="card-bank-dates">
-                <p class="card-bank-month">00/</p>
+                <p class="card-bank-month">00</p>
+                /
                 <p class="card-bank-year">00</p>
               </div>
             </div>
-            <img src="./assets/card-logo.svg" class="card-logo" alt="Card Logo">
+            <img src="./assets/card-logo.svg" class="card-logo" alt="Card Logo" />
+            <img src="" class="card-logo-brand" alt="Logo Brand" />
           </div>
         </div>
         <div class="form-card">
-          <form>
+          <form id="form" autocomplete="off">
             <div class="form-control">
               <label for="card-name">Cardholder Name</label>
               <input type="text" name="card-name" id="card-name" placeholder="e.g Jane Appleseed" />
+              <small></small>
             </div>
             <div class="form-control">
               <label for="card-number">Card Number</label>
-              <input type="number" name="card-number" id="card-number" placeholder="e.g 1234 5678 9123 0000" />
+              <input type="text" name="card-number" id="card-number" placeholder="e.g 1234 5678 9123 0000" />
+              <small class="error"></small>
+              <small class="credit-card"></small>
             </div>
-            <div class="form-control form-card-dates">
+            <div class="form-card-dates">
               <div>
                 <label for="card-month">Exp. Date (MM/YY)</label>
-                <div class="card-flex">
-                  <input type="number" name="card-month" id="card-month" placeholder="MM" />
-                  <input type="number" name="card-year" id="card-year" placeholder="YY" />
+                <div class="form-control card-flex">
+                  <input type="number" name="card-month" id="card-month" min="1" max="12" minlength="1" maxlength="2" placeholder="MM" />
+                  <input type="number" name="card-year" id="card-year" min="1" minlength="1" maxlength="2" placeholder="YY" />
+                  <small></small>
                 </div>
               </div>
-              <div>
+              <div class="form-control">
                 <label for="card-cvc">Cvc</label>
-                <input type="number" name="card-cvc" id="card-cvc" placeholder="CVC" />
+                <input type="number" name="card-cvc" id="card-cvc" minlength="1" maxlength="3" placeholder="e.g. 123" />
+                <small></small>
               </div>
             </div>
             <button type="submit" class="form-btn">Confirm</button>
